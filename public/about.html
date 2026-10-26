@@ -4,72 +4,133 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Us | Fashion Hub</title>
-  <meta name="description" content="The story and values behind Fashion Hub.">
+  <meta name="description" content="The story, values and people behind Fashion Hub.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111'/><text x='50' y='68' font-family='Georgia' font-size='56' fill='white' text-anchor='middle'>F</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <div class="announce">FREE SHIPPING ON ORDERS OVER $75 · EASY 30-DAY RETURNS</div>
-
   <header class="site-header">
     <nav class="nav container">
-      <a href="index.html" class="logo">Fashion<span>Hub</span></a>
+      <a href="index.html" class="logo">Fashion <span>Hub</span></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
         <li><a href="about.html" class="active">About</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="blog.html">Journal</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="nav-actions">
-        <button class="cart-btn" aria-label="Shopping bag">🛍️<span class="cart-count">0</span></button>
-        <button class="menu-toggle" aria-label="Open menu">☰</button>
-      </div>
+      <button class="menu-toggle" aria-label="Toggle menu"><span></span></button>
     </nav>
   </header>
 
   <main>
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">Who We Are</p>
-        <h1>Our Story</h1>
-        <p>Fashion that looks good, feels good and does good.</p>
+        <span class="eyebrow">About Us</span>
+        <h1>Designed to be <em class="serif">kept.</em></h1>
+        <p class="lead">Fashion Hub was founded on a simple belief: beautiful clothes should be made well, priced fairly and worn for years.</p>
       </div>
     </section>
 
     <section>
       <div class="container split">
-        <div class="split-visual" aria-hidden="true"></div>
-        <div>
-          <p class="eyebrow">Since 2020</p>
-          <h2>Made for real life.</h2>
-          <p>Fashion Hub started with a simple idea: everyone deserves clothes that make them feel confident, without paying a fortune or compromising on quality.</p>
-          <p>Today we design versatile collections for women and men — wardrobe staples you'll reach for again and again, alongside seasonal pieces that keep things fresh.</p>
-          <a href="shop.html" class="btn">Explore the Collection</a>
+        <div class="split-media reveal">
+          <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=1000&q=80" alt="A curated clothing rail in the studio" loading="lazy">
+        </div>
+        <div class="split-text reveal">
+          <span class="eyebrow">Our Story</span>
+          <h2>It started with one perfect jacket.</h2>
+          <p>Our founder spent years searching for a jacket that was beautifully cut, made from honest materials and didn't cost a month's rent. When she couldn't find it, she designed it herself.</p>
+          <p>That jacket sold out in a week. Today, Fashion Hub designs complete collections for women and men — but the idea hasn't changed. Every piece has to earn its place in your wardrobe.</p>
         </div>
       </div>
     </section>
 
-    <section style="background:#efe6dc">
+    <section class="section-sand">
       <div class="container stats">
-        <div class="stat"><strong>50K+</strong><span>Happy customers</span></div>
-        <div class="stat"><strong>300+</strong><span>Styles designed</span></div>
-        <div class="stat"><strong>4.8★</strong><span>Average rating</span></div>
+        <div class="stat reveal"><strong>2018</strong><span>Founded</span></div>
+        <div class="stat reveal"><strong>60K+</strong><span>Happy customers</span></div>
+        <div class="stat reveal"><strong>85%</strong><span>Natural &amp; recycled fibres</span></div>
+        <div class="stat reveal"><strong>12</strong><span>Partner ateliers</span></div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">What We Believe</p>
+        <div class="section-head center reveal">
+          <span class="eyebrow">What We Stand For</span>
           <h2>Our Values</h2>
         </div>
         <div class="values">
-          <div class="value"><h3>Quality First</h3><p>We choose durable fabrics and careful construction, so your favourites last for seasons, not weeks.</p></div>
-          <div class="value"><h3>Fair Prices</h3><p>Great style shouldn't be a luxury. We keep our margins honest and our prices accessible.</p></div>
-          <div class="value"><h3>Responsible Choices</h3><p>From packaging to production partners, we're always looking for ways to reduce our footprint.</p></div>
+          <div class="value reveal">
+            <span class="num">01</span>
+            <h3>Craft over trend</h3>
+            <p>We design for longevity, not for the moment. Classic silhouettes, refined each season, made by skilled hands.</p>
+          </div>
+          <div class="value reveal">
+            <span class="num">02</span>
+            <h3>Honest materials</h3>
+            <p>Organic cotton, responsibly sourced wool, recycled cashmere. We tell you exactly what each piece is made of.</p>
+          </div>
+          <div class="value reveal">
+            <span class="num">03</span>
+            <h3>Fair for everyone</h3>
+            <p>Fair prices for you, fair wages for the people who make our clothes. We visit every partner atelier ourselves.</p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section-sand">
+      <div class="container split reverse">
+        <div class="split-media reveal">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80" alt="Neutral garments on wooden hangers" loading="lazy">
+        </div>
+        <div class="split-text reveal">
+          <span class="eyebrow">Our Process</span>
+          <h2>From sketch to your wardrobe.</h2>
+          <p>Each collection begins with months of research, fabric sourcing and hand sketching in our New York studio. Every design goes through at least three rounds of sampling and is fitted on real people before it's approved.</p>
+          <p>We produce in small batches to avoid waste, and we'd rather sell out than overproduce.</p>
+          <a href="post.html?p=behind-the-seams" class="link-arrow">Inside our studio</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">The People</span>
+          <h2>Meet the Team</h2>
+        </div>
+        <div class="team">
+          <div class="member reveal">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=700&q=80" alt="Portrait of the founder" loading="lazy">
+            <h3>Amelia Laurent</h3>
+            <span>Founder &amp; Creative Director</span>
+          </div>
+          <div class="member reveal">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=700&q=80" alt="Portrait of the head of menswear" loading="lazy">
+            <h3>Daniel Reyes</h3>
+            <span>Head of Menswear</span>
+          </div>
+          <div class="member reveal">
+            <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=700&q=80" alt="Portrait of the lead stylist" loading="lazy">
+            <h3>Mei Tanaka</h3>
+            <span>Lead Stylist</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark quote">
+      <div class="container reveal">
+        <blockquote>“We don't make more clothes. We make better ones.”</blockquote>
+        <cite style="color:rgba(255,255,255,0.6)">— Amelia Laurent, Founder</cite>
+        <div style="margin-top:40px"><a href="collections.html" class="btn btn-white">Explore the Collections</a></div>
       </div>
     </section>
   </main>
@@ -78,34 +139,39 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a href="index.html" class="logo">Fashion<span>Hub</span></a>
-          <p>Modern clothing and accessories for everyone. Designed with care, made to last.</p>
+          <a href="index.html" class="logo">Fashion <span>Hub</span></a>
+          <p class="about-line">Modern, considered clothing for women and men. Designed to be worn, loved and kept.</p>
         </div>
         <div>
-          <h4>Shop</h4>
+          <h4>Explore</h4>
           <ul>
-            <li><a href="shop.html?cat=women">Women</a></li>
-            <li><a href="shop.html?cat=men">Men</a></li>
-            <li><a href="shop.html?cat=accessories">Accessories</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="blog.html">Journal</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div>
-          <h4>Follow Us</h4>
+          <h4>Visit</h4>
+          <ul>
+            <li>123 Style Avenue</li>
+            <li>New York, NY 10001</li>
+            <li><a href="mailto:hello@fashionhub.com">hello@fashionhub.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
           <ul>
             <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Pinterest</a></li>
             <li><a href="#">TikTok</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">© <span id="year"></span> Fashion Hub. All rights reserved.</div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Fashion Hub. All rights reserved.</span>
+        <span>Designed with care.</span>
+      </div>
     </div>
   </footer>
 
