@@ -1,6 +1,6 @@
-// Image helper — photos are served from Unsplash
-const img = (id, w = 1200) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+// Image helper — photos live in /images ("-sm" versions for cards)
+const img = (name, small = false) => `images/${name}${small ? "-sm" : ""}.webp`;
+const arrow = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
 // Blog posts — add new posts to the top of this list.
 // In "body", lines starting with "## " become headings and "> " become quotes.
@@ -11,7 +11,7 @@ const posts = [
     tag: "Trends",
     date: "October 18, 2026",
     read: "5 min read",
-    image: "1485968579580-b6d095142e6e",
+    image: "plaid-blazer",
     excerpt: "Oversized checks, relaxed tailoring and the art of the effortless layer — what we're seeing on the streets this season.",
     body: [
       "Every autumn the city becomes a runway, and this year the mood is unmistakably relaxed. Structured pieces are being worn loose, tailoring is softer, and the best-dressed people we've seen look like they barely tried.",
@@ -30,7 +30,7 @@ const posts = [
     tag: "Style Guide",
     date: "October 2, 2026",
     read: "7 min read",
-    image: "1512436991641-6745cdb1723f",
+    image: "capsule-rack",
     excerpt: "Fewer pieces, more outfits. Our stylists share the 12 essentials they'd build any wardrobe around.",
     body: [
       "A capsule wardrobe isn't about owning less for the sake of it — it's about owning pieces you genuinely love and wear. When everything works together, getting dressed becomes the easiest part of your day.",
@@ -49,7 +49,7 @@ const posts = [
     tag: "Style Guide",
     date: "September 21, 2026",
     read: "4 min read",
-    image: "1556905055-8f358a7a47b2",
+    image: "layering",
     excerpt: "Textures, proportions and the one rule that makes layered looks feel polished instead of bulky.",
     body: [
       "Layering is where personal style really shines. Done well, it adds depth and interest to an outfit while keeping you comfortable as temperatures change through the day.",
@@ -68,7 +68,7 @@ const posts = [
     tag: "Menswear",
     date: "September 9, 2026",
     read: "5 min read",
-    image: "1479064555552-3ef4979f8908",
+    image: "boots-flatlay",
     excerpt: "From the perfect leather boot to a belt that lasts a decade — the foundations of a modern men's wardrobe.",
     body: [
       "Great menswear is built on a handful of pieces that do a lot of work. Get these right and everything else falls into place.",
@@ -89,7 +89,7 @@ const posts = [
     tag: "Trends",
     date: "August 27, 2026",
     read: "3 min read",
-    image: "1496747611176-843222e1e57c",
+    image: "floral",
     excerpt: "Soft botanicals, painterly blooms and how to wear print without it wearing you.",
     body: [
       "Florals are a perennial favourite for a reason, but this season's take is softer and more painterly — less garden party, more watercolour.",
@@ -106,7 +106,7 @@ const posts = [
     tag: "Journal",
     date: "August 12, 2026",
     read: "6 min read",
-    image: "1551232864-3f0890e580d9",
+    image: "studio-rack",
     excerpt: "A day with the Fashion Hub design team — from first sketch to final fitting.",
     body: [
       "Every Fashion Hub collection starts in the same place: a long white table covered in fabric swatches, mood boards and far too many cups of coffee.",
@@ -124,10 +124,16 @@ const posts = [
 function postCard(p) {
   return `
     <a class="post-card reveal" href="post.html?p=${p.slug}">
-      <div class="thumb"><img src="${img(p.image, 800)}" alt="${p.title}" loading="lazy"></div>
-      <div class="post-meta"><span class="tag">${p.tag}</span><span>${p.date}</span></div>
-      <h3>${p.title}</h3>
-      <p>${p.excerpt}</p>
+      <div class="thumb">
+        <img src="${img(p.image, true)}" alt="${p.title}" loading="lazy" decoding="async" width="640" height="480">
+        <span class="tag">${p.tag}</span>
+      </div>
+      <div class="body">
+        <div class="post-meta"><span>${p.date}</span><span>${p.read}</span></div>
+        <h3>${p.title}</h3>
+        <p>${p.excerpt}</p>
+        <span class="read link">Read story</span>
+      </div>
     </a>`;
 }
 
@@ -136,20 +142,22 @@ function renderBlog() {
   if (!grid) return;
   const limit = Number(grid.dataset.limit) || posts.length;
   const skipFirst = grid.hasAttribute("data-skip-featured");
+  const current = new URLSearchParams(location.search).get("p");
   const chips = document.querySelectorAll(".chip");
-  let current = "All";
+  let tag = "All";
 
   const draw = () => {
-    let list = current === "All" ? posts : posts.filter((p) => p.tag === current);
-    if (skipFirst && current === "All") list = list.slice(1);
+    let list = tag === "All" ? posts : posts.filter((p) => p.tag === tag);
+    if (skipFirst && tag === "All") list = list.slice(1);
+    if (current) list = list.filter((p) => p.slug !== current);
     grid.innerHTML = list.slice(0, limit).map(postCard).join("");
     observeReveals();
   };
   chips.forEach((chip) =>
     chip.addEventListener("click", () => {
-      current = chip.dataset.tag;
+      tag = chip.dataset.tag;
       chips.forEach((c) => c.classList.toggle("active", c === chip));
-      document.querySelector(".post-featured")?.toggleAttribute("hidden", current !== "All");
+      document.querySelector(".post-featured")?.toggleAttribute("hidden", tag !== "All");
       draw();
     })
   );
@@ -159,12 +167,15 @@ function renderBlog() {
   if (featured) {
     const p = posts[0];
     featured.innerHTML = `
-      <a href="post.html?p=${p.slug}"><img src="${img(p.image, 1400)}" alt="${p.title}"></a>
-      <div>
-        <span class="eyebrow">Featured · ${p.tag}</span>
-        <h2>${p.title}</h2>
-        <p>${p.excerpt}</p>
-        <a class="link-arrow" href="post.html?p=${p.slug}">Read the story</a>
+      <a class="pic" href="post.html?p=${p.slug}"><img src="${img(p.image)}" alt="${p.title}" decoding="async"></a>
+      <div class="txt">
+        <span class="tag lime">Featured · ${p.tag}</span>
+        <div>
+          <div class="post-meta" style="margin-bottom:14px"><span>${p.date}</span><span>${p.read}</span></div>
+          <h2 class="h-lg" style="margin-bottom:16px">${p.title}</h2>
+          <p>${p.excerpt}</p>
+        </div>
+        <a class="btn lime" href="post.html?p=${p.slug}" style="align-self:flex-start">Read the story <span class="arrow">${arrow}</span></a>
       </div>`;
   }
 }
@@ -188,23 +199,23 @@ function renderPost() {
 
   article.innerHTML = `
     <header class="article-hero narrow">
-      <span class="eyebrow">${p.tag}</span>
-      <h1>${p.title}</h1>
-      <div class="post-meta"><span>${p.date}</span><span>${p.read}</span></div>
+      <div class="crumbs"><a href="index.html">Home</a> / <a href="blog.html">Journal</a> / ${p.tag}</div>
+      <h1 class="h-xl">${p.title}</h1>
+      <div class="post-meta"><span class="tag dark"><span class="dot"></span>${p.tag}</span><span style="align-self:center">${p.date}</span><span style="align-self:center">${p.read}</span></div>
     </header>
-    <div class="article-cover"><img src="${img(p.image, 2000)}" alt="${p.title}"></div>
+    <div class="wrap"><div class="article-cover"><img src="${img(p.image)}" alt="${p.title}" decoding="async"></div></div>
     <div class="article-body narrow">
       ${body}
-      <div class="article-footer">
-        <a class="link-arrow" href="blog.html">All stories</a>
-        <a class="link-arrow" href="post.html?p=${next.slug}">Next: ${next.title}</a>
+      <div class="article-foot">
+        <a class="link" href="blog.html">All stories</a>
+        <a class="link" href="post.html?p=${next.slug}">Next: ${next.title}</a>
       </div>
     </div>`;
 }
 
 // Fade-in on scroll: reveal anything that has entered the viewport
 function observeReveals() {
-  const limit = window.innerHeight * 0.92;
+  const limit = window.innerHeight * 0.94;
   document.querySelectorAll(".reveal:not(.visible)").forEach((el) => {
     if (el.getBoundingClientRect().top < limit) el.classList.add("visible");
   });
@@ -214,18 +225,21 @@ window.addEventListener("resize", observeReveals);
 window.addEventListener("load", observeReveals);
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Header turns solid after scrolling past the hero
-  const header = document.querySelector(".site-header");
-  const onScroll = () => header.classList.toggle("solid", window.scrollY > 40);
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
   // Mobile menu
   document.querySelector(".menu-toggle")?.addEventListener("click", () => {
     document.body.classList.toggle("menu-open");
   });
   document.querySelectorAll(".nav-links a").forEach((a) =>
     a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+  );
+
+  // Collection rail arrows
+  const rail = document.querySelector(".rail");
+  document.querySelectorAll("[data-rail]").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const card = rail.querySelector(".rail-card");
+      rail.scrollBy({ left: (card.offsetWidth + 12) * Number(btn.dataset.rail), behavior: "smooth" });
+    })
   );
 
   renderBlog();

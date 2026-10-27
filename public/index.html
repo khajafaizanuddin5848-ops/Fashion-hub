@@ -3,19 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fashion Hub | Modern, Considered Clothing</title>
-  <meta name="description" content="Fashion Hub designs modern, considered clothing and accessories for women and men.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111'/><text x='50' y='68' font-family='Georgia' font-size='56' fill='white' text-anchor='middle'>F</text></svg>">
+  <title>Fashion Hub — Wear your story</title>
+  <meta name="description" content="Fashion Hub designs modern clothing and accessories for women and men.">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230d0d0d'/><text x='50' y='68' font-family='Georgia' font-style='italic' font-size='56' fill='%23dcff4f' text-anchor='middle'>f</text></svg>">
+  <link rel="preload" as="image" href="images/hero.webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add("js")</script>
 </head>
-<body class="has-hero">
+<body>
   <header class="site-header">
-    <nav class="nav container">
-      <a href="index.html" class="logo">Fashion <span>Hub</span></a>
+    <nav class="nav wrap">
+      <a href="index.html" class="logo"><span class="logo-mark">f</span>Fashion Hub</a>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -23,194 +25,228 @@
         <li><a href="blog.html">Journal</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <a href="contact.html" class="btn plain nav-cta">Book a stylist</a>
       <button class="menu-toggle" aria-label="Toggle menu"><span></span></button>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=2000&q=80')"></div>
-      <div class="container">
-        <div class="hero-content">
-          <span class="eyebrow">Autumn / Winter 2026</span>
-          <h1>Quiet luxury,<br><em class="serif">everyday.</em></h1>
-          <p>Considered pieces in beautiful fabrics — designed to move with you, season after season.</p>
-          <div class="hero-actions">
-            <a href="collections.html" class="btn btn-white">Explore Collections</a>
-            <a href="about.html" class="btn btn-white" style="background:transparent;color:#fff">Our Story</a>
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="b b-title">
+            <span class="tag"><span class="dot"></span>New drop · Autumn/Winter 26</span>
+            <h1 class="display">Wear <span class="it">your</span><br>story.</h1>
+            <div class="b-title-foot">
+              <p>Modern essentials and statement pieces for women and men — cut clean, made to last, styled your way.</p>
+              <a href="collections.html" class="btn">Explore collections <span class="arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+            </div>
+          </div>
+          <a href="collections.html#women" class="b b-hero-img">
+            <img src="images/hero.webp" alt="Model in a pink ruffled dress" fetchpriority="high" decoding="async" width="1100" height="1300">
+            <div class="float">
+              <div><strong>The Romance Edit</strong><span>24 new pieces</span></div>
+              <span class="go"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+          <a href="collections.html#men" class="b b-img-a">
+            <img src="images/navy-suit-sm.webp" alt="Man buttoning a navy suit jacket" decoding="async" width="640" height="760">
+            <span class="tag b-label">Menswear</span>
+          </a>
+          <div class="b b-stat">
+            <strong>60K+</strong>
+            <p>people dressed by Fashion Hub since 2018</p>
+          </div>
+          <a href="collections.html#accessories" class="b b-img-b">
+            <img src="images/red-sunnies-sm.webp" alt="Woman in red sunglasses and a black jacket" decoding="async" width="640" height="760">
+            <span class="tag b-label">Accessories</span>
+          </a>
+        </div>
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee-track">
+            <span>Timeless cuts</span><span class="star">✦</span><span class="it">natural fabrics</span><span class="star">✦</span><span>Made to last</span><span class="star">✦</span><span class="it">effortless</span><span class="star">✦</span><span>Designed in NYC</span><span class="star">✦</span>
+            <span>Timeless cuts</span><span class="star">✦</span><span class="it">natural fabrics</span><span class="star">✦</span><span>Made to last</span><span class="star">✦</span><span class="it">effortless</span><span class="star">✦</span><span>Designed in NYC</span><span class="star">✦</span>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Timeless design</span><span>Natural fabrics</span><span>Made to last</span><span>Considered craft</span><span>Effortless style</span>
-        <span>Timeless design</span><span>Natural fabrics</span><span>Made to last</span><span>Considered craft</span><span>Effortless style</span>
+    <section>
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div>
+            <span class="tag"><span class="dot"></span>Collections</span>
+            <h2 class="h-xl">Shop the <span class="it">season</span></h2>
+          </div>
+          <div class="rail-nav">
+            <button class="circle-btn" data-rail="-1" aria-label="Previous">←</button>
+            <button class="circle-btn" data-rail="1" aria-label="Next">→</button>
+          </div>
+        </div>
+        <div class="rail reveal">
+          <a href="collections.html#women" class="rail-card">
+            <img src="images/red-dress-sm.webp" alt="Woman in a flowing red dress" loading="lazy" decoding="async" width="640" height="760">
+            <span class="tag lime num">01</span>
+            <div class="meta"><div><h3>Women</h3><span class="count">128 styles</span></div><span class="go"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a href="collections.html#men" class="rail-card">
+            <img src="images/suit-sm.webp" alt="Man in a tailored blue suit" loading="lazy" decoding="async" width="640" height="760">
+            <span class="tag lime num">02</span>
+            <div class="meta"><div><h3>Men</h3><span class="count">96 styles</span></div><span class="go"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a href="collections.html#accessories" class="rail-card">
+            <img src="images/flatlay-sm.webp" alt="Sunglasses, watch and leather bag" loading="lazy" decoding="async" width="640" height="760">
+            <span class="tag lime num">03</span>
+            <div class="meta"><div><h3>Accessories</h3><span class="count">64 styles</span></div><span class="go"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a href="collections.html#edits" class="rail-card">
+            <img src="images/milan-coat-sm.webp" alt="Woman in a pale blue coat in Milan" loading="lazy" decoding="async" width="640" height="760">
+            <span class="tag lime num">04</span>
+            <div class="meta"><div><h3>Outerwear</h3><span class="count">42 styles</span></div><span class="go"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+          <a href="collections.html#edits" class="rail-card">
+            <img src="images/yellow-set-sm.webp" alt="Woman in a yellow tracksuit" loading="lazy" decoding="async" width="640" height="760">
+            <span class="tag lime num">05</span>
+            <div class="meta"><div><h3>Off-Duty</h3><span class="count">38 styles</span></div><span class="go"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </a>
+        </div>
       </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div>
+            <span class="tag"><span class="dot"></span>Why Fashion Hub</span>
+            <h2 class="h-xl">Less noise.<br><span class="it">More you.</span></h2>
+          </div>
+          <p>We design fewer, better pieces — so getting dressed feels easy and every item earns its place.</p>
+        </div>
+        <div class="bento">
+          <div class="b pic span-5 row-2 reveal"><img src="images/knit-rail-sm.webp" alt="Neutral knitwear on a rail" loading="lazy" decoding="async" width="640" height="760"></div>
+          <div class="b lime span-4 reveal">
+            <span class="icon-chip">🌿</span>
+            <div><h3 class="h-md">85% natural &amp; recycled fibres</h3><p>Organic cotton, responsible wool and recycled cashmere.</p></div>
+          </div>
+          <div class="b ink span-3 reveal">
+            <span class="icon-chip">✂️</span>
+            <div><h3 class="h-md">Free alterations</h3><p>Every piece, tailored to fit you.</p></div>
+          </div>
+          <div class="b span-3 reveal">
+            <span class="icon-chip">🚚</span>
+            <div><h3 class="h-md">Free shipping</h3><p>On orders over $75, worldwide.</p></div>
+          </div>
+          <div class="b span-4 reveal">
+            <div class="big-num">4.9<span class="it" style="font-size:.5em;color:var(--muted)">/5</span></div>
+            <p>Average rating from 12,000+ verified reviews.</p>
+          </div>
+          <div class="b span-12 reveal" style="flex-direction:row;align-items:center;flex-wrap:wrap">
+            <p style="font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.2;color:var(--ink);flex:1;min-width:260px">“The first brand where everything I buy actually gets worn. It feels like it was made for me.”</p>
+            <span class="tag dark"><span class="dot"></span>Sarah M. — New York</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="inset">
+      <section class="dark-sec">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <div>
+              <span class="tag"><span class="dot"></span>Services</span>
+              <h2 class="h-xl">More than <span class="it" style="color:var(--lime)">clothing</span></h2>
+            </div>
+            <p>From one perfect piece to a complete wardrobe — our stylists and tailors are here to help.</p>
+          </div>
+          <div class="svc-list">
+            <a href="contact.html" class="svc reveal"><span class="n">01</span><h3>Personal styling</h3><p>One-to-one sessions in store or by video, building looks around your life.</p><span class="go"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+            <a href="contact.html" class="svc reveal"><span class="n">02</span><h3>Made-to-measure</h3><p>Suits, blazers and coats cut to your exact measurements in 4–6 weeks.</p><span class="go"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+            <a href="contact.html" class="svc reveal"><span class="n">03</span><h3>Wardrobe edit</h3><p>We help you edit what you own, find the gaps and plan a capsule.</p><span class="go"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          </div>
+        </div>
+      </section>
     </div>
 
     <section>
-      <div class="container split">
-        <div class="split-media reveal">
-          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80" alt="Knitwear hanging on a rail" loading="lazy">
-          <img class="inset" src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80" alt="Cream knitted poncho on a hanger" loading="lazy">
-        </div>
-        <div class="split-text reveal">
-          <span class="eyebrow">The Fashion Hub Way</span>
-          <h2>Less noise.<br>More meaning.</h2>
-          <p>We believe great style is personal, not loud. Every Fashion Hub piece is designed to become a favourite — the jacket you reach for first, the knit you wear for years.</p>
-          <p>Thoughtful cuts, natural fibres and honest prices. That's it.</p>
-          <a href="about.html" class="link-arrow">Discover our story</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-sand">
-      <div class="container">
-        <div class="section-head reveal">
+      <div class="wrap">
+        <div class="sec-head reveal">
           <div>
-            <span class="eyebrow">Shop by Collection</span>
-            <h2>The Collections</h2>
+            <span class="tag"><span class="dot"></span>The Journal</span>
+            <h2 class="h-xl">Fresh <span class="it">stories</span></h2>
           </div>
-          <a href="collections.html" class="link-arrow">View all</a>
-        </div>
-        <div class="collection-grid">
-          <a href="collections.html#women" class="collection-card reveal">
-            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=80" alt="Woman in a flowing red dress" loading="lazy">
-            <div class="card-text"><span>Collection 01</span><h3>Women</h3></div>
-          </a>
-          <a href="collections.html#men" class="collection-card reveal">
-            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=900&q=80" alt="Man in a tailored navy suit" loading="lazy">
-            <div class="card-text"><span>Collection 02</span><h3>Men</h3></div>
-          </a>
-          <a href="collections.html#accessories" class="collection-card reveal">
-            <img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=900&q=80" alt="Sunglasses, watch and bag flat lay" loading="lazy">
-            <div class="card-text"><span>Collection 03</span><h3>Accessories</h3></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-dark">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="eyebrow">Services</span>
-            <h2>More than clothing</h2>
-          </div>
-          <p style="color:rgba(255,255,255,0.6)">From a single piece to a complete wardrobe, our team is here to help you look and feel your best.</p>
-        </div>
-        <div class="services">
-          <div class="service reveal">
-            <span class="num">01</span>
-            <h3>Personal Styling</h3>
-            <p>One-to-one sessions with our stylists, in store or online, to build looks around your life and your shape.</p>
-          </div>
-          <div class="service reveal">
-            <span class="num">02</span>
-            <h3>Tailoring &amp; Alterations</h3>
-            <p>Complimentary hemming on all trousers, plus expert alterations so every piece fits exactly as it should.</p>
-          </div>
-          <div class="service reveal">
-            <span class="num">03</span>
-            <h3>Wardrobe Consultation</h3>
-            <p>We'll help you edit what you own, identify the gaps and plan a capsule that works hard all year.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="quote">
-      <div class="container reveal">
-        <span class="eyebrow">Customer Love</span>
-        <blockquote>“The first brand where everything I buy actually gets worn. Beautiful quality, and it feels like it was made for me.”</blockquote>
-        <cite>— Sarah M., New York</cite>
-      </div>
-    </section>
-
-    <section class="section-sand">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="eyebrow">The Journal</span>
-            <h2>Latest Stories</h2>
-          </div>
-          <a href="blog.html" class="link-arrow">Read the journal</a>
+          <a href="blog.html" class="btn">Read the journal <span class="arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         </div>
         <div class="blog-grid" id="blog-grid" data-limit="3"></div>
       </div>
     </section>
 
-    <section style="padding-bottom:0">
-      <div class="container section-head center reveal" style="margin-bottom:40px">
-        <span class="eyebrow">@fashionhub</span>
-        <h2>Worn by you</h2>
-      </div>
-      <div class="lookbook">
-        <a href="#"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&h=500&q=80" alt="Woman with shopping bags" loading="lazy"></a>
-        <a href="#"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&h=500&q=80" alt="Woman in a blue coat in Milan" loading="lazy"></a>
-        <a href="#"><img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=500&h=500&q=80" alt="Man in a leather jacket" loading="lazy"></a>
-        <a href="#"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=500&h=500&q=80" alt="Woman in striped trousers" loading="lazy"></a>
-        <a href="#"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&h=500&q=80" alt="Man in a navy suit" loading="lazy"></a>
-        <a href="#"><img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&h=500&q=80" alt="Woman in a graphic tee" loading="lazy"></a>
-      </div>
-    </section>
-
-    <section class="newsletter">
-      <div class="narrow reveal">
-        <span class="eyebrow">Newsletter</span>
-        <h2>Join the inner circle</h2>
-        <p>New collections, styling notes and private events — straight to your inbox.</p>
-        <form class="newsletter-form" data-message="Welcome to the inner circle — you're on the list.">
-          <input type="email" placeholder="Your email address" required aria-label="Email address">
-          <button type="submit">Subscribe →</button>
-        </form>
-        <p class="form-note"></p>
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="cta reveal">
+          <div>
+            <span class="tag dark"><span class="dot"></span>Newsletter</span>
+            <h2 class="display" style="font-size:clamp(3rem,8vw,7rem);margin-top:24px">Get <span class="it">dressed</span><br>first.</h2>
+          </div>
+          <div>
+            <p>New drops, private sales and styling notes — plus 10% off your first order.</p>
+            <form class="subscribe" data-message="You're in! Check your inbox for your 10% code.">
+              <input type="email" placeholder="Your email address" required aria-label="Email address">
+              <button class="btn" type="submit">Subscribe <span class="arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            </form>
+            <p class="form-note"></p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
+    <div class="wrap">
+      <div class="foot-top">
         <div>
-          <a href="index.html" class="logo">Fashion <span>Hub</span></a>
-          <p class="about-line">Modern, considered clothing for women and men. Designed to be worn, loved and kept.</p>
+          <a href="index.html" class="logo"><span class="logo-mark">f</span>Fashion Hub</a>
+          <p class="foot-about">Modern clothing for women and men. Designed in New York, made to be worn on repeat.</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="TikTok">TT</a>
+            <a href="#" aria-label="Pinterest">PI</a>
+            <a href="#" aria-label="YouTube">YT</a>
+          </div>
         </div>
         <div>
           <h4>Explore</h4>
           <ul>
-            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html">About us</a></li>
             <li><a href="collections.html">Collections</a></li>
             <li><a href="blog.html">Journal</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div>
-          <h4>Visit</h4>
+          <h4>Collections</h4>
+          <ul>
+            <li><a href="collections.html#women">Women</a></li>
+            <li><a href="collections.html#men">Men</a></li>
+            <li><a href="collections.html#accessories">Accessories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Studio</h4>
           <ul>
             <li>123 Style Avenue</li>
             <li>New York, NY 10001</li>
             <li><a href="mailto:hello@fashionhub.com">hello@fashionhub.com</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Follow</h4>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Pinterest</a></li>
-            <li><a href="#">TikTok</a></li>
-          </ul>
-        </div>
       </div>
-      <div class="footer-bottom">
+      <div class="wordmark" aria-hidden="true">Fashion <span class="it">hub</span></div>
+      <div class="foot-bottom">
         <span>© <span id="year"></span> Fashion Hub. All rights reserved.</span>
-        <span>Designed with care.</span>
+        <span>Privacy · Terms</span>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
